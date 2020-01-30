@@ -1,0 +1,22 @@
+{
+  "npmScope": "nx04",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "app04": {
+      "tags": []
+    },
+    "app04-e2e": {
+      "tags": [],
+      "implicitDependencies": ["app04"]
+    }
+  }
+}
