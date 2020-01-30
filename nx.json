@@ -17,6 +17,15 @@
     "app04-e2e": {
       "tags": [],
       "implicitDependencies": ["app04"]
+    },
+    "material": {
+      "tags": []
+    },
+    "core-data": {
+      "tags": []
+    },
+    "ui-login": {
+      "tags": []
     }
   }
 }
