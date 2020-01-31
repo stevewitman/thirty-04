@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'ui-login',
@@ -7,9 +9,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(
+    private router: Router,
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
+    this.initForm()
+  }
+
+  private initForm() {
+    this.form = this.fb.group({
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      password: ['', [
+        Validators.required,
+        Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'),
+        Validators.minLength(4)
+      ]],
+    })
+  }
+
+  login() {
+    if (this.form.invalid) return;
+    this.router.navigate(['/pets']);
+  }
+
+  get email() {
+    return this.form.get('email');
+  }
+
+  get password() {
+    return this.form.get('password');
   }
 
 }

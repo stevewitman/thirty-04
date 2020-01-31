@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@nx04/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { MaterialModule } from '@nx04/material';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
@@ -25,6 +26,7 @@ import { UiLoginModule } from '@nx04/ui-login';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule,
     UiLoginModule
   ],
   providers: [],

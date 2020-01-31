@@ -1,1 +1,40 @@
-<p>login component</p>
+<div class="login-card">
+  <mat-card class="mat-elevation-z1">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="form" (submit)="login()" >
+      <mat-card-content>
+        <div>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Email"
+              type="text"
+              formControlName="email"
+              autocomplete="email">
+              <mat-error *ngIf="email.invalid && email.touched">
+                Your email does not look right
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Password"
+              type="password"
+              formControlName="password"
+              autocomplete="current-password">
+              <mat-hint>Must have at least one letter, one number and be at least 4 characters</mat-hint>
+
+              <mat-error *ngIf="password.invalid && password.touched">
+                Invalid password
+              </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="button-container" align="end">
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+        </div>
+      </mat-card-content>
+    </form>
+  </mat-card>
+</div>
