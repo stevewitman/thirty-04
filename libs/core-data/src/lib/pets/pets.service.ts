@@ -25,4 +25,8 @@ export class PetsService {
     return this.httpClient.patch(this.URL + '/' + pet.id, pet)
   }
 
+  deletePet(id: string) {
+    return this.httpClient.delete(this.URL + '/' + id)
+  }
+
 }

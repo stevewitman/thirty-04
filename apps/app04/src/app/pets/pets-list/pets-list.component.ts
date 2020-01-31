@@ -9,9 +9,10 @@ import { Pet } from '@nx04/core-data';
 })
 export class PetsListComponent implements OnInit {
 
+  @Input() readonly = false;
   @Input() pets: Pet[];
   @Output() selected = new EventEmitter();
-
+  @Output() deleting = new EventEmitter();
 
   constructor() { }
 
