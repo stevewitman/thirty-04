@@ -15,11 +15,18 @@ export class PetDetailComponent {
     this.currentPet = Object.assign({}, value);
   };
   @Input() form: FormGroup;
+  @Output() saving = new EventEmitter();
+  @Output() cancelling = new EventEmitter();
 
   constructor(private fb: FormBuilder) { }
 
   onSubmit() {
     console.log("FORM:", this.form.value)
+    this.saving.emit(this.form.value);
+  }
+
+  onClear() {
+    this.cancelling.emit(this.currentPet);
   }
 
 }

@@ -9,6 +9,8 @@
     <nx04-pet-detail
     [pet]="selectedPet"
     [form]="form"
+    (saving)="savePet($event)"
+    (cancelling)="cancel()"
   ></nx04-pet-detail>
   </div>
 </div>
