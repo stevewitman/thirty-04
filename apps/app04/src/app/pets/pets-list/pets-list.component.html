@@ -5,7 +5,9 @@
   <mat-card-content>
     <mat-list>
       <mat-list-item
-        *ngFor="let pet of pets">
+      *ngFor="let pet of pets"
+      (click)="selected.emit(pet)"
+      style="cursor: pointer">
         <h4 mat-line>{{ pet.title }}</h4>
         <p mat-line>{{ pet.details }}</p>
       </mat-list-item>

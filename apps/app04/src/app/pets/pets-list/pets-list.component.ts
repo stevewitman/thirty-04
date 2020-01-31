@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Pet } from '@nx04/core-data';
 
@@ -10,6 +10,8 @@ import { Pet } from '@nx04/core-data';
 export class PetsListComponent implements OnInit {
 
   @Input() pets: Pet[];
+  @Output() selected = new EventEmitter();
+
 
   constructor() { }
 
